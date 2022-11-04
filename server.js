@@ -2,11 +2,14 @@ import express, { response } from "express"
 import bcrypt from "bcrypt-nodejs"
 import cors from "cors"
 import knex from "knex"
+import dotenv from "dotenv"
 
 import handleRegister from "./controllers/register.js"
 import handleSignIn from "./controllers/signin.js"
 import handleProfileGet from "./controllers/profile.js"
 import { handleImage, handleApiCall } from "./controllers/image.js"
+
+dotenv.config()
 
 const db = knex({
     client: "pg",
@@ -14,7 +17,7 @@ const db = knex({
         host: "127.0.0.1",
         port: 5432,
         user: "postgres",
-        password: "formalIN",
+        password: "123",
         database: "smart-brain"
     }
 });
